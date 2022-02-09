@@ -56,7 +56,8 @@ const NewCar = (props) => {
     };
     console.log(form_data)
 
-    props.setState({ ...props.state, data: this.data.push(form_data)});
+    const joined = props.state.data.concat(form_data);
+    props.setState({ data: joined })
   };
 
   // const handleSubmit = async (e) => {
