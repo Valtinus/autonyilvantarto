@@ -4,15 +4,15 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const NewCar = (props) => {
-  const [formValue, setformValue] = useState({
-    manufacturer: "",
-    type: "",
-    ccm: "",
-    color: "",
-    design: "",
-    year: "",
-    web: "",
-  });
+  // const [formValue, setformValue] = useState({
+  //   manufacturer: "",
+  //   type: "",
+  //   ccm: "",
+  //   color: "",
+  //   design: "",
+  //   year: "",
+  //   web: "",
+  // });
 
   const validationSchema = Yup.object({
     manufacturer: Yup.string().required("Adja meg a gyártó nevét"),
@@ -37,11 +37,24 @@ const NewCar = (props) => {
     web: "",
   };
 
-  const renderError = (message) => <p className="help is-danger" style={{color: "red", fontWeight: "bold" }}>{message}</p>;
+  const renderError = (message) => (
+    <p className="help is-danger" style={{ color: "red", fontWeight: "bold" }}>
+      {message}
+    </p>
+  );
 
   const onSubmit = (values) => {
-    const { form_data } = values;
-    props.setState();
+    const form_data = {
+      id: Math.floor(Math.random() * 1000000),
+      manufacturer: values.manufacturer,
+      type: values.type,
+      ccm: values.ccm,
+      color: values.color,
+      design: values.design,
+      year: parseInt((new Date(values.year).getTime() / 1000).toFixed(0)),
+      web: values.web,
+    };
+    console.log(form_data)
   };
 
   // const handleSubmit = async (e) => {
