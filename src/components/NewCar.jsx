@@ -44,6 +44,7 @@ const NewCar = (props) => {
   );
 
   const onSubmit = (values) => {
+
     const form_data = {
       id: Math.floor(Math.random() * 1000000),
       manufacturer: values.manufacturer,
@@ -55,6 +56,9 @@ const NewCar = (props) => {
       web: values.web,
     };
     console.log(form_data)
+
+
+
 
     const joined = props.state.data.concat(form_data);
     props.setState({ data: joined })

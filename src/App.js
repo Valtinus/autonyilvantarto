@@ -52,7 +52,7 @@ function App() {
         </button>
       </div>
       <div className="form">
-        {form === true && <Form setForm={setForm} setState={setState} />}
+        {form === true && <Form setForm={setForm} state={state} setState={setState} />}
       </div>
       <div className="container">
         <table border="1">
