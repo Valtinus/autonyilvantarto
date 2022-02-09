@@ -1,3 +1,9 @@
+a mock adatokat egy fake api-val valósítottam meg, ezt a JSON servert (https://github.com/typicode/json-server#getting-started) az npx json-server --watch db.json --port 3004 paranccsal lehet elindítani
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
