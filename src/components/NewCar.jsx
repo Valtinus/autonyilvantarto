@@ -4,15 +4,6 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const NewCar = (props) => {
-  // const [formValue, setformValue] = useState({
-  //   manufacturer: "",
-  //   type: "",
-  //   ccm: "",
-  //   color: "",
-  //   design: "",
-  //   year: "",
-  //   web: "",
-  // });
 
   const validationSchema = Yup.object({
     manufacturer: Yup.string().required("Adja meg a gyártó nevét"),
@@ -58,32 +49,9 @@ const NewCar = (props) => {
     console.log(form_data)
 
 
-
-
     const joined = props.state.data.concat(form_data);
     props.setState({ data: joined })
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const car = {
-  //     id: Math.floor(Math.random() * 1000000),
-  //     manufacturer: formValue.manufacturer,
-  //     type: formValue.type,
-  //     ccm: formValue.ccm,
-  //     color: formValue.color,
-  //     design: formValue.design,
-  //     year: formValue.year,
-  //     web: formValue.web,
-  //   };
-
-  //   console.log(props.state);
-
-  //   props.setState({ ...props.state, data: props.state.data.push(car) });
-
-  //   console.log(props.state);
-  // };
 
   return (
     <div className="form">
