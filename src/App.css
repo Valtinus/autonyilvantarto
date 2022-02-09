@@ -1,0 +1,23 @@
+.container{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.header{
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.new_car{
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new_car:hover{
+  background-color: rgb(197, 197, 197);
+}

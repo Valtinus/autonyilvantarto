@@ -1,0 +1,11 @@
+.form{
+    background-color: grey;
+    width: 80%;
+}
+
+.buttons{
+    padding-top: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

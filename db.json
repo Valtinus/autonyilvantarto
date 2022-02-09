@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "manufacturer": "Ford",
+      "type": "FORD FIESTA CONNECTED 1.1L PFI3",
+      "ccm": 1100,
+      "color": "MAGNETIC",
+      "design": "Kupé",
+      "year": 1202342343,
+      "web": "http://www.ford.com"
+    },
+    {
+      "id": 2,
+      "manufacturer": "Ford",
+      "type": "FORD ECOSPORT TITANIUM 1.0L 125 M6",
+      "ccm": 990,
+      "color": "DESERT ISLAND BLUE",
+      "design": "SUV",
+      "year": 543452345,
+      "web": "http://www.ford.com"
+    },
+    {
+      "id": 3,
+      "manufacturer": "Ford",
+      "type": "FORD Focus Connected 5 ajtós 1.0 ",
+      "ccm": 990,
+      "color": "Blue",
+      "design": "SUV",
+      "year": 1003242341,
+      "web": "http://www.ford.com"
+    },
+    {
+      "id": 756745776,
+      "manufacturer": "Ford",
+      "type": "FORD PUMA",
+      "ccm": 1000,
+      "color": "Blue",
+      "design": "SUV",
+      "year": 1644353680,
+      "web": "http://www.ford.com"
+    }
+  ]
+}
