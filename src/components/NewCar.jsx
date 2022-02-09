@@ -4,23 +4,23 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const NewCar = (props) => {
-  const [formValue, setformValue] = useState({
-    manufacturer: "",
-    type: "",
-    ccm: "",
-    color: "",
-    design: "",
-    year: "",
-    web: "",
-  });
+  // const [formValue, setformValue] = useState({
+  //   manufacturer: "",
+  //   type: "",
+  //   ccm: "",
+  //   color: "",
+  //   design: "",
+  //   year: "",
+  //   web: "",
+  // });
 
   const validationSchema = Yup.object({
-    manufacturer: Yup.string().required(),
-    type: Yup.string().required(),
-    ccm: Yup.number().required(),
+    manufacturer: Yup.string().required("Adja meg a gyártó nevét"),
+    type: Yup.string().required("Adja meg az autó típusát"),
+    ccm: Yup.number().required("Adja meg a motor hengerűrtartalmár"),
     color: Yup.string(),
     design: Yup.string(),
-    year: Yup.date().required(),
+    year: Yup.date().required("Adjon meg gyártási dátumot"),
     web: Yup.string().matches(
       /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
       "Helytelen url!"
@@ -33,7 +33,7 @@ const NewCar = (props) => {
     ccm: "",
     color: "",
     design: "",
-    year: new Date(),
+    year: "",
     web: "",
   };
 
@@ -116,13 +116,13 @@ const NewCar = (props) => {
         />
         <ErrorMessage name="design" render={renderError} />
         <br />
-        <label htmlFor="date">Gyártási időpont* </label>
+        <label htmlFor="year">Gyártási időpont* </label>
         <Field
           type="date"
-          id="date"
-          name="date"
+          id="year"
+          name="year"
         />
-        <ErrorMessage name="date" render={renderError} />
+        <ErrorMessage name="year" render={renderError} />
         <br />
         <label htmlFor="web">Gyártó weboldala </label>
         <Field
