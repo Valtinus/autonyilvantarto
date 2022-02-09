@@ -17,7 +17,7 @@ const NewCar = (props) => {
   const validationSchema = Yup.object({
     manufacturer: Yup.string().required("Adja meg a gyártó nevét"),
     type: Yup.string().required("Adja meg az autó típusát"),
-    ccm: Yup.number().required("Adja meg a motor hengerűrtartalmár"),
+    ccm: Yup.number().required("Adja meg a motor hengerűrtartalmát"),
     color: Yup.string(),
     design: Yup.string(),
     year: Yup.date().required("Adjon meg gyártási dátumot"),
@@ -56,7 +56,7 @@ const NewCar = (props) => {
     };
     console.log(form_data)
 
-    props.setState({ ...props.state, data: props.state.data.push(form_data) });
+    props.setState({ ...props.state, data: this.data.push(form_data)});
   };
 
   // const handleSubmit = async (e) => {
