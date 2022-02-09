@@ -43,33 +43,26 @@ const NewCar = (props) => {
     alert(JSON.stringify(values, null, 2));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const car = {
-      id: Math.floor(Math.random() * 1000000),
-      manufacturer: formValue.manufacturer,
-      type: formValue.type,
-      ccm: formValue.ccm,
-      color: formValue.color,
-      design: formValue.design,
-      year: formValue.year,
-      web: formValue.web,
-    };
+  //   const car = {
+  //     id: Math.floor(Math.random() * 1000000),
+  //     manufacturer: formValue.manufacturer,
+  //     type: formValue.type,
+  //     ccm: formValue.ccm,
+  //     color: formValue.color,
+  //     design: formValue.design,
+  //     year: formValue.year,
+  //     web: formValue.web,
+  //   };
 
-    console.log(props.state);
+  //   console.log(props.state);
 
-    props.setState({ ...props.state, data: props.state.data.push(car) });
+  //   props.setState({ ...props.state, data: props.state.data.push(car) });
 
-    console.log(props.state);
-  };
-
-  const handleChange = (event) => {
-    setformValue({
-      ...formValue,
-      [event.target.name]: event.target.value,
-    });
-  };
+  //   console.log(props.state);
+  // };
 
   return (
     <div className="form">
