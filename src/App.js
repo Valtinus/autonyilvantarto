@@ -35,9 +35,11 @@ function App() {
     getRemoteData().then((remote) => {
       setState({
         ...state,
-        data: !_.isEqual(getLocalData(), remote)
-          ? setLocalData(remote)
-          : getLocalData(),
+        data: 
+        // !_.isEqual(getLocalData(), remote)
+        //   ? setLocalData(remote)
+        //   : 
+          getLocalData(),
       });
       setLoading(false);
     });
