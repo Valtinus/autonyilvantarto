@@ -37,11 +37,11 @@ const NewCar = (props) => {
     web: "",
   };
 
-  const renderError = (message) => <p className="help is-danger">{message}</p>;
+  const renderError = (message) => <p className="help is-danger" style={{color: "red", fontWeight: "bold" }}>{message}</p>;
 
   const onSubmit = (values) => {
     const { form_data } = values;
-    props.setState()
+    props.setState();
   };
 
   // const handleSubmit = async (e) => {
@@ -70,73 +70,45 @@ const NewCar = (props) => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values, {resetForm}) => {
-            await onSubmit(values)
-            resetForm()
+        onSubmit={async (values, { resetForm }) => {
+          await onSubmit(values);
+          resetForm();
         }}
       >
-          <Form>
-        <label htmlFor="manufacturer">Gyártó* </label>
-        <Field
-          type="text"
-          id="manufacturer"
-          name="manufacturer"
-        />
-        <ErrorMessage name="manufacturer" render={renderError} />
-        <br />
-        <label htmlFor="type">Típus* </label>
-        <Field
-          type="text"
-          id="type"
-          name="type"
-        />
-        <ErrorMessage name="type" render={renderError} />
-        <br />
-        <label htmlFor="ccm">Motor hengerűrtartalom* </label>
-        <Field
-          type="number"
-          id="ccm"
-          name="ccm"
-        />
-        <ErrorMessage name="ccm" render={renderError} />
-        (cm3)
-        <br />
-        <label htmlFor="color">Szín </label>
-        <Field
-          type="text"
-          id="color"
-          name="color"
-        />
-        <ErrorMessage name="color" render={renderError} />
-        <br />
-        <label htmlFor="design">Kivitel </label>
-        <Field
-          type="text"
-          id="design"
-          name="design"
-        />
-        <ErrorMessage name="design" render={renderError} />
-        <br />
-        <label htmlFor="year">Gyártási időpont* </label>
-        <Field
-          type="date"
-          id="year"
-          name="year"
-        />
-        <ErrorMessage name="year" render={renderError} />
-        <br />
-        <label htmlFor="web">Gyártó weboldala </label>
-        <Field
-          type="text"
-          id="web"
-          name="web"
-        />
-        <ErrorMessage name="web" render={renderError} />
-        <div className="buttons">
-          <button type="submit">Új autó</button>
-          <button type="reset">Törlés</button>
-          <button onClick={() => props.setForm(false)}>Mégse</button>
-        </div>
+        <Form>
+          <label htmlFor="manufacturer">Gyártó* </label>
+          <Field type="text" id="manufacturer" name="manufacturer" />
+          <ErrorMessage name="manufacturer" render={renderError} />
+          <br />
+          <label htmlFor="type">Típus* </label>
+          <Field type="text" id="type" name="type" />
+          <ErrorMessage name="type" render={renderError} />
+          <br />
+          <label htmlFor="ccm">Motor hengerűrtartalom* </label>
+          <Field type="number" id="ccm" name="ccm" />
+          (cm3)
+          <ErrorMessage name="ccm" render={renderError} />
+          <br />
+          <label htmlFor="color">Szín </label>
+          <Field type="text" id="color" name="color" />
+          <ErrorMessage name="color" render={renderError} />
+          <br />
+          <label htmlFor="design">Kivitel </label>
+          <Field type="text" id="design" name="design" />
+          <ErrorMessage name="design" render={renderError} />
+          <br />
+          <label htmlFor="year">Gyártási időpont* </label>
+          <Field type="date" id="year" name="year" />
+          <ErrorMessage name="year" render={renderError} />
+          <br />
+          <label htmlFor="web">Gyártó weboldala </label>
+          <Field type="text" id="web" name="web" />
+          <ErrorMessage name="web" render={renderError} />
+          <div className="buttons">
+            <button type="submit">Új autó</button>
+            <button type="reset">Törlés</button>
+            <button onClick={() => props.setForm(false)}>Mégse</button>
+          </div>
         </Form>
       </Formik>
     </div>

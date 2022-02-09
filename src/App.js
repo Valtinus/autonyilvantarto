@@ -19,8 +19,12 @@ const getRemoteData = async () => {
 };
 
 const stampToDate = (stamp) => {
-  return new Date(stamp*1000).toLocaleString('hu-HU', { year: 'numeric', month: '2-digit', day: '2-digit'})
-}
+  return new Date(stamp * 1000).toLocaleString("hu-HU", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+};
 
 function App() {
   const [state, setState] = useState({ data: [] });
@@ -31,8 +35,7 @@ function App() {
     getRemoteData().then((remote) => {
       setState({
         ...state,
-        data: 
-          !_.isEqual(getLocalData(), remote)
+        data: !_.isEqual(getLocalData(), remote)
           ? setLocalData(remote)
           : getLocalData(),
       });
@@ -44,10 +47,12 @@ function App() {
     <>
       <div className="header">
         <h1>Autónyilvántartás</h1>
-        <button className="new_car" onClick={() => setForm(true)}>Új autó</button>
+        <button className="new_car" onClick={() => setForm(true)}>
+          Új autó
+        </button>
       </div>
       <div className="form">
-        {form === true && <Form setForm={setForm} setState={setState}/>}
+        {form === true && <Form setForm={setForm} setState={setState} />}
       </div>
       <div className="container">
         <table border="1">
