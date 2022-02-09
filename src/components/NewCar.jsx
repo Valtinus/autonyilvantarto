@@ -55,6 +55,8 @@ const NewCar = (props) => {
       web: values.web,
     };
     console.log(form_data)
+
+    props.setState({ ...props.state, data: props.state.data.push(form_data) });
   };
 
   // const handleSubmit = async (e) => {
