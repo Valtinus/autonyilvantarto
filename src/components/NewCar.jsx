@@ -10,7 +10,7 @@ const NewCar = (props) => {
     ccm: "",
     color: "",
     design: "",
-    year: new Date(),
+    year: "",
     web: "",
   });
 
@@ -20,9 +20,7 @@ const NewCar = (props) => {
     ccm: Yup.number().required(),
     color: Yup.string(),
     design: Yup.string(),
-    year: Yup.date()
-      .default(() => new Date())
-      .required(),
+    year: Yup.date().required(),
     web: Yup.string().matches(
       /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
       "Helytelen url!"
@@ -142,23 +140,7 @@ const NewCar = (props) => {
         <ErrorMessage name="web" render={renderError} />
         <div className="buttons">
           <button type="submit">Új autó</button>
-          <button
-            type="reset"
-            onClick={() =>
-              setformValue({
-                ...formValue,
-                manufacturer: "",
-                type: "",
-                ccm: "",
-                color: "",
-                design: "",
-                year: "",
-                web: "",
-              })
-            }
-          >
-            Törlés
-          </button>
+          <button type="reset">Törlés</button>
           <button onClick={() => props.setForm(false)}>Mégse</button>
         </div>
         </Form>
@@ -168,11 +150,3 @@ const NewCar = (props) => {
 };
 
 export default NewCar;
-
-// manufacturer: "Ford",
-// type: "FORD FIESTA CONNECTED 1.1L PFI3",
-// ccm: 1100,
-// color: "MAGNETIC",
-// design: "Kupé",
-// year: 4322342343,
-// web:
