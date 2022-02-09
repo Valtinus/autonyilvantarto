@@ -1,6 +1,7 @@
 a mock adatokat egy fake api-val valósítottam meg, ezt a JSON servert (https://github.com/typicode/json-server#getting-started) az npx json-server --watch db.json --port 3004 paranccsal lehet elindítani
 
 
+UPDATE: határidőn FELÜL : sajnos észrevettem, hogy az adat megjelenik, de a local storageba nem rakja bele, ezt részlegesen javítottam, továbbra se tökéletes, ezen dolgozom még a továbbiakban
 
 
 
