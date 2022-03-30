@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import _ from "lodash";
-import Form from "./components/NewCar";
+import NewCar from "./components/NewCar";
 
 const setLocalData = (obj) => {
   if (typeof obj !== "object") return false;
@@ -38,8 +38,8 @@ function App() {
         data: 
         // !_.isEqual(getLocalData(), remote)
         //   ? setLocalData(remote)
-        //   : 
-          getLocalData(),
+        //   :
+         getLocalData()
       });
       setLoading(false);
     });
@@ -54,7 +54,9 @@ function App() {
         </button>
       </div>
       <div className="form">
-        {form === true && <Form setForm={setForm} state={state} setState={setState} />}
+        {form === true && (
+          <NewCar setForm={setForm} state={state} setState={setState} />
+        )}
       </div>
       <div className="container">
         <table border="1">
@@ -73,15 +75,17 @@ function App() {
           {console.log(state.data)}
           {state.data.map((item, index) => {
             return (
-              <tr key={index}>
-                <td>{item.manufacturer}</td>
-                <td>{item.type}</td>
-                <td>{item.ccm}</td>
-                <td>{item.color}</td>
-                <td>{item.design}</td>
-                <td>{stampToDate(item.year)}</td>
-                <td>{item.web}</td>
-              </tr>
+              <tbody>
+                <tr key={index}>
+                  <td>{item.manufacturer}</td>
+                  <td>{item.type}</td>
+                  <td>{item.ccm}</td>
+                  <td>{item.color}</td>
+                  <td>{item.design}</td>
+                  <td>{stampToDate(item.year)}</td>
+                  <td>{item.web}</td>
+                </tr>
+              </tbody>
             );
           })}
         </table>
